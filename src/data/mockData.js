@@ -1,0 +1,321 @@
+// Mock data for the portfolio
+
+export const projects = [
+  {
+    id: 1,
+    title: 'Diteck Technology',
+    subtitle: 'Team project',
+    description: 'A full-stack agency platform with AI-powered features, secure job application flow, and role-based dashboards for Admin and Users.',
+    features: [
+      'Role-based dashboards for Admin and Users',
+      'Secure job application system with email verification (OTP)',
+      'AI chatbot for answering queries',
+      'User management and team collaboration tools',
+      'Blog and service section management',
+      'Image uploads integrated with AWS S3'
+    ],
+    technologies: ['Next.js', 'Tailwind', 'Node.js', 'MongoDB', 'Vercel'],
+    techColor: 'blue',
+    gradient: 'linear-gradient(188.62deg, rgb(31, 41, 55) 49.9%, rgb(37, 99, 235) 81.7%, rgb(59, 130, 246) 93.88%, rgb(147, 197, 253) 113.5%)',
+    textColor: 'text-blue-300',
+    shadowColor: 'rgb(37, 99, 235)',
+    image: 'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fditeck.b1096035.png&w=3840&q=75',
+    shortDesc: 'Agency platform with job posting, AI chatbot, and secure application system.',
+    website: 'https://diteck.vercel.app/',
+    github: null,
+    featured:true
+  },
+  {
+    id: 2,
+    title: 'Tasty Drop',
+    subtitle: 'Team project',
+    description: 'A full-stack food delivery platform with multiple payment methods and role-based dashboards for Admin, Rider, and Partner roles.',
+    features: ['Multipe payment methods integration','Role-based dashboards(Admin,Rider,Partner)','Subscription service implementation','Real-time order tracking','User authentication and authorization'],
+    technologies: ['React', 'Express', 'Tailwind', 'MongoDB', 'Redux'],
+    techColor: 'pink',
+    gradient: 'linear-gradient(188.62deg, rgb(107, 13, 51) 49.9%, rgb(219, 39, 119) 81.7%, rgb(244, 114, 182) 93.88%, rgb(249, 215, 147) 113.5%)',
+    textColor: 'text-pink-300',
+    shadowColor: 'rgb(219, 39, 119)',
+    image: 'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftasty.2ab9a38e.png&w=3840&q=75',
+    shortDesc: 'Food delivery platform with multiple payment methods and role-based dashboards.',
+    website: 'https://tasty-drops.web.app/',
+    github: 'https://github.com/BakiAbdullah/Tasty-drop-client',
+    featured:true
+  },
+  {
+    id: 3,
+    title: 'RetrieveX',
+    subtitle: 'Personal project',
+    description: 'A community-driven platform for reporting and reclaiming lost items with user accounts, detailed reports, ownership verification, and an admin dashboard.',
+    features: ['User authentication and profile','Lost item reporting and searching','Ownership verification system','Admin dashboard for moderation','Dark/light mode toggle'],
+    technologies: ['React', 'Prisma', 'Tailwind', 'PostgreSQL', 'Supabase', 'Redux', 'TypeScript'],
+    techColor: 'blue',
+    gradient: 'linear-gradient(188.62deg, rgb(7, 14, 87) 49.9%, rgb(41, 50, 203) 81.7%, rgb(121, 128, 255) 93.88%, rgb(249, 215, 147) 113.5%)',
+    textColor: 'text-blue-300',
+    shadowColor: 'rgb(41, 50, 203)',
+    image: 'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fretrievex.bfda1f2c.jpeg&w=3840&q=75',
+    shortDesc: 'A community platform for reporting and reclaiming lost items with dark/light mode.',
+    website: 'https://lost-and-found-live-swart.vercel.app/',
+    github: 'https://github.com/naimur-reza/Lost-And-Found-Frontend',
+    featured:true
+  },
+  {
+    id: 4,
+    title: 'VanishVote',
+    subtitle: 'Personal project',
+    description: 'A minimalist poll creation platform allowing users to make anonymous, timed polls with no login required. Built for quick decisions and ephemeral feedback.',
+    features: ['Create anonymous polls without login','Unique shareable links for each poll','Timed expiry:1h,12h,or 24h','Real-time results or hide until poll ends','Dark/light mode toggle'],
+    technologies: ['Next.js', 'MongoDB', 'Express.js', 'Node.js', 'Tailwind CSS'],
+    techColor: 'cyan',
+    gradient: 'linear-gradient(rgb(15, 32, 39) 0%, rgb(32, 58, 67) 50%, rgb(44, 83, 100) 100%)',
+    textColor: 'text-cyan-300',
+    shadowColor: 'rgb(32, 58, 67)',
+    image: 'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FvanishNote.3060122c.png&w=3840&q=75',
+    shortDesc: 'Create anonymous polls that disappear after a set time. No login needed.',
+    website: 'https://vanish-vote-client-kohl.vercel.app/',
+    github: 'https://github.com/naimur-reza?tab=repositories&q=vanish&type=&language=&sort=',
+    featured:true
+  },
+  
+{
+     id:5,
+     title:'Camp Sun Shine',
+     subtitle:'Personal project',
+     description:'Educational platform with role-based dashboards for Instructor,Student,and Admin,featuring payment integration via Stripe for course enrollment.',
+     features:['Role-based dashboards [instructor,Student,Admin]','Course search and enrollment','Stripe payment integration','User authentication and profiles','Course management system'],
+     technologies:['React.js','Express.js','Tailwind CSS','MongoDB'],
+     techColor:'emerald',
+     gradient:'linear-gradient(188.62deg, rgb(6, 78, 59) 49.9%, rgb(5, 150, 105) 81.7%, rgb(16, 185, 129) 93.88%, rgb(167, 243, 208) 113.5%)',
+     textColor:'text-emerald-300',
+     shadowColor:'rgb(5,150,105)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcampsunshine-min.8b187d5f.png&w=3840&q=75',
+     shortDesc:'Educational platform with role-based dashboards and payment integration.',
+     website:'https://campsunshine-c653c.web.app/',
+     github:'https://github.com/naimur-reza/Campsunshine-Client',
+     featured:false
+     
+},
+  {
+     id:6,
+     title:'Crypto-Critox',
+     subtitle:'Personal Project',
+     description:'Modern crypto Web3 website featuring vibrant design and smooth GSAP animations with interactive elements that respond to scroll position',
+     features:['GSAP animations','Scroll-responsive interactive elements','Responsive design','Modern UI/UX','Crypto information display'],
+     technologies:['React.js','Tailwind CSS'],
+     techColor:'pink',
+     gradient:'linear-gradient(188.62deg, rgb(107, 13, 51) 49.9%, rgb(219, 39, 119) 81.7%, rgb(244, 114, 182) 93.88%, rgb(249, 215, 147) 113.5%)',
+     textColor:'text-pink-300',
+     shadowColor:'rgb(219, 39, 119)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcrypto-critox.0b7fa4ff.jpeg&w=3840&q=75',
+     shortDesc:'Modern crypto Web3 website with smooth animations and interactive elements.',
+     website:'https://crypto-critox.vercel.app/',
+     github:'https://github.com/naimur-reza/Crypto-Critox',
+     featured:false  
+  },
+  {
+    id:7,
+     title:'HolaPep',
+     subtitle:'Agency project',
+     description:'Dynamic web platform providing custom software solutions and staffing serviuces with an integrated blog system using Prisma and GraphQL.',
+     features:['Custom software solutions showcase','Staffing services platform','Blog system with Prisma and GraphQL','Responsive design','Business service information'],
+     technologies:['React.js','Prisma','Tailwind CSS','GraphQL','PostgreSQL'],
+     techColor:'purple',
+     gradient:'linear-gradient(188.62deg, rgb(59, 7, 100) 49.9%, rgb(126, 34, 206) 81.7%, rgb(168, 85, 247) 93.88%, rgb(233, 213, 255) 113.5%)',
+     textColor:'text-purple-300',
+     shadowColor:'rgb(126,34,206)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fholapep.e4235810.jpeg&w=3840&q=75',
+     shortDesc:'Web platform for software solutions with integrated blog system.',
+     website:'http://holapep.com/',
+     github:'',
+     featured:false
+  },
+  {
+     id:8,
+     title:'MCraft Studios',
+     subtitle:'Agency project',
+     description:'Creative agency specializing in digital solutions,including custom software development and innovative design services for businesses.',
+     features:['Portfolio showcase','Service descriptions','Contact information','Responsive design','Modern UI/UX'],
+     technologies:['React.js','Tailwind CSS'],
+     techColor:'pink',
+     gradient:'linear-gradient(188.62deg, rgb(107, 13, 51) 49.9%, rgb(219, 39, 119) 81.7%, rgb(244, 114, 182) 93.88%, rgb(249, 215, 147) 113.5%)',
+     textColor:'text-pink-300',
+     shadowColor:'rgb(219, 39, 119)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmcraft.27dc52e2.jpeg&w=3840&q=75',
+     shortDesc:'Creative agency website showcasing digital solutions and design services',
+     website:'http://mcraftstudios.com/',
+     github:'',
+     featured:false
+  },
+  {
+    id:9,
+     title:'Tinker Land',
+     subtitle:'Personal project',
+     description:'Toy e-commerce platform enabling users to search for trendy toys,add to cart, and checkout using Stripe with Firebase authentication.',
+     features:['Toy search and filtering','Shopping cart functionality','Stripe payment integration','Firebase authentication','User profiles and orders'],
+     technologies:['React.js','Express.js','Tailwind CSS','MongoDB','Redux'],
+     techColor:'blue',
+     gradient:'linear-gradient(188.62deg, rgb(7, 14, 87) 49.9%, rgb(41, 50, 203) 81.7%, rgb(121, 128, 255) 93.88%, rgb(249, 215, 147) 113.5%)',
+     textColor:'text-blue-300',
+     shadowColor:'rgb(41, 50, 203)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ftinkerland-min.9dd2693c.png&w=3840&q=75',
+     shortDesc:'Toy e-commerce platform with search,cart and Stripe checkout.',
+     website:'https://tinkerr-land.web.app/',
+     github:'https://github.com/naimur-reza/TinkerLand-Client',
+     featured:false
+  },
+  {
+    id:10,
+     title:'Issue Tracker',
+     subtitle:'Personal project',
+     description:'Next.js authentication for issue tracking with user authentication,filtering by name,date and status,and a dashboard for summaries.',
+     features:['Issue creation and management','Filtering by name,date and status','Dashboard with summaries','User authentication','CRUD operations for issues'],
+     technologies:['Next.js','MongoDB','Prisma','TypeScript','Tailwind CSS'],
+     techColor:'emerald',
+     gradient:'linear-gradient(188.62deg, rgb(6, 78, 59) 49.9%, rgb(5, 150, 105) 81.7%, rgb(16, 185, 129) 93.88%, rgb(167, 243, 208) 113.5%)',
+     textColor:'text-emerald-300',
+     shadowColor:'rgb(5,150,105)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fissue-tracker.67f104f5.png&w=3840&q=75',
+     shortDesc:'Issue tracking application with filtering and dashboard features',
+     website:'https://issue-tracker-next-js.vercel.app/',
+     github:'https://github.com/naimur-reza/Issue-Tracker-NextJs',
+     featured:false
+  },
+  {
+    id:11,
+     title:'Air Cnc',
+     subtitle:'Personal project',
+     description:'Hotel booking service web application with search,filtering and payment options for users to book hotels after payment',
+     features:['Hotel search and filtering','Booking system','Payment integration','User authentication','Hotel service information'],
+     technologies:['React.js','Express.js','MongoDB','Tailwind CSS'],
+     techColor:'purple',
+     gradient:'linear-gradient(188.62deg, rgb(59, 7, 100) 49.9%, rgb(126, 34, 206) 81.7%, rgb(168, 85, 247) 93.88%, rgb(233, 213, 255) 113.5%)',
+     textColor:'text-purple-300',
+     shadowColor:'rgb(126,34,206)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Faircnc-min.9798f91f.png&w=3840&q=75',
+     shortDesc:'Hotel booking platform with search,filtering and payment options.',
+     website:'https://air-cnc-d27d2.web.app/',
+     github:'https://github.com/naimur-reza/AirCnc-Client',
+     featured:false
+  },
+  {
+    id:12,
+     title:'Sessrail',
+     subtitle:'Client project',
+     description:'Regional railway network website providing updates,project details and interactive features for users to stay informed about rail infrastructure progress.',
+     features:['Railway project information','Interactive features','Project updates','Responsive design','Regional infrastructure details'],
+     technologies:['React.js','Tailwind CSS'],
+     techColor:'blue',
+     gradient:'linear-gradient(188.62deg, rgb(7, 14, 87) 49.9%, rgb(41, 50, 203) 81.7%, rgb(121, 128, 255) 93.88%, rgb(249, 215, 147) 113.5%)',
+     textColor:'text-blue-300',
+     shadowColor:'rgb(41,50,203)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fsessrail.af672671.jpeg&w=3840&q=75',
+     shortDesc:'Regional railway network website with project updates and information',
+     website:'https://sessrail.com/',
+     github:'https://github.com/holapepgit/portfolio-1',
+     featured:false
+  },
+  {
+    id:13,
+     title:'CHEF HUNTER',
+     subtitle:'Personal project',
+     description:'Recipe service web application where users can search for food based on chef profiles,bookmark favorite foods and explore valuable chef recipes.',
+     features:['Chef profiles and recipes','Food search functionality','Bookmarking system','User authentication','Recipe details and instructions'],
+     technologies:['React.js','Express.js','Tailwind CSS','MongoDB'],
+     techColor:'emerald',
+     gradient:'linear-gradient(188.62deg, rgb(6, 78, 59) 49.9%, rgb(5, 150, 105) 81.7%, rgb(16, 185, 129) 93.88%, rgb(167, 243, 208) 113.5%)',
+     textColor:'text-emerald-300',
+     shadowColor:'rgb(5,150,105)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcookdens-min.1b747157.png&w=3840&q=75',
+     shortDesc:'Recipe platform with chef profiles and food search functionality',
+     website:'https://chef-master-pro.web.app/home/',
+     github:'https://github.com/naimur-reza/CHEF-HUNTER-CLIENT',
+     featured:false
+  },
+  {
+    id:14,
+     title:'Lit Lounge',
+     subtitle:'Personal project',
+     description:'Book shop frontend application where users can find their favorite books and place orders with available valuable book collections.',
+     features:['Book search and filtering','Book details and pricing','Ordering sytem','Responsive design','Book recommendation'],
+     technologies:['React.js','Express.js','Tailwind CSS','MongoDB'],
+     techColor:'pink',
+     gradient:'linear-gradient(188.62deg, rgb(107, 13, 51) 49.9%, rgb(219, 39, 119) 81.7%, rgb(244, 114, 182) 93.88%, rgb(249, 215, 147) 113.5%)',
+     textColor:'text-pink-300',
+     shadowColor:'rgb(219, 39, 119)',
+     image:'https://naimur-reza.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fbooksite-min.4425a1e3.png&w=3840&q=75',
+     shortDesc:'Book shop frontend with search and ordering functionality.',
+     website:'http://dadur-boi.surge.sh/',
+     github:'https://github.com/naimur-reza/Lit-lounge',
+     featured:false
+  }
+
+];
+
+export const skills = [
+  { name: 'HTML', icon: 'https://cdn.simpleicons.org/html5', alt: 'HTML' },
+  { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg', alt: 'CSS' },
+  { name: 'JavaScript', icon: 'https://cdn.simpleicons.org/javascript', alt: 'JavaScript' },
+  { name: 'TypeScript', icon: 'https://cdn.simpleicons.org/typescript', alt: 'TypeScript' },
+  { name: 'ReactJS', icon: 'https://cdn.simpleicons.org/react', alt: 'ReactJS' },
+  { name: 'NextJS', icon: 'https://cdn.simpleicons.org/nextdotjs/white', alt: 'NextJS' },
+  { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss', alt: 'Tailwind CSS' },
+  { name: 'Framer Motion', icon: 'https://cdn.simpleicons.org/framer', alt: 'Framer Motion' },
+  { name: 'Shadcn', icon: 'https://cdn.simpleicons.org/shadcnui/white', alt: 'Shadcn' },
+  { name: 'NodeJS', icon: 'https://cdn.simpleicons.org/nodedotjs/darkgreen', alt: 'NodeJS' },
+  { name: 'ExpressJS', icon: 'https://cdn.simpleicons.org/express/white', alt: 'ExpressJS' },
+  { name: 'MongoDB', icon: 'https://cdn.simpleicons.org/mongodb/darkgreen', alt: 'MongoDB' },
+  { name: 'MySQL', icon: 'https://cdn.simpleicons.org/mysql', alt: 'MySQL' },
+  { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql/sky', alt: 'PostgreSQL' },
+  { name: 'Prisma', icon: 'https://cdn.simpleicons.org/prisma/blue', alt: 'Prisma' },
+  { name: 'Redux', icon: 'https://cdn.simpleicons.org/redux', alt: 'Redux' },
+  { name: 'Zustand', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg', alt: 'Zustand' },
+  { name: 'Git', icon: 'https://cdn.simpleicons.org/git', alt: 'Git' },
+  { name: 'GitHub', icon: 'https://cdn.simpleicons.org/github/white', alt: 'GitHub' },
+  { name: 'Vercel', icon: 'https://cdn.simpleicons.org/vercel/white', alt: 'Vercel' },
+  { name: 'Postman', icon: 'https://cdn.simpleicons.org/postman', alt: 'Postman' },
+  { name: 'Docker', icon: 'https://cdn.simpleicons.org/docker', alt: 'Docker' },
+  { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg', alt: 'AWS' },
+  { name: 'Kubernetes', icon: 'https://cdn.simpleicons.org/kubernetes/blue', alt: 'Kubernetes' }
+];
+
+export const marqueeItems = [
+  'Frontend Developer',
+  'Tech Enthuasist',
+  'Software Engineer',
+  'Open Source Contributor',
+  'Next.js Expert',
+  'Web App Architect',
+  'Future DevOps Engineer',
+  'Code & Coffee Addict'
+];
+
+export const education = [
+  {
+    id: 1,
+    year: '2018 - 2022',
+    degree: 'Bachelor of Technology in Computer Science and Engineering',
+    institution: 'R.V.R & J.C College Of Engineering,Guntur',
+    grade: 'CGPA: 8.75 out of 10.0'
+  },
+  {
+    id: 2,
+    year: '2016-2018',
+    degree: 'Intermediate,M.P.C',
+    institution: 'Sri Chaitanya College',
+    grade: 'MARKS: 979 OUT OF 1000'
+  },
+  {
+    id: 3,
+    year: '2016',
+    degree: 'Secondary School Certificate (SSC)',
+    institution: 'Sri Chaitanya School',
+    grade: 'CGPA: 9.7 out of 10.0'
+  }
+];
+
+
+/*
+
+
+
+*/
