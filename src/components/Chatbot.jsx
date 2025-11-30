@@ -1,18 +1,79 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState,useRef,useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Code, Sparkles, Briefcase } from 'lucide-react';
+import { MessageSquare, X, Send, Code, Sparkles, Briefcase,Loader2 } from 'lucide-react';
+import {Chat} from '@google/genai';
+import {createChatSession,sendMessageToGemini} from '../services/geminiService';
+
 
 const Chatbot = ({ isOpen, setIsOpen }) => {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [inputValue,setInputValue]=useState('');
+  const [isLoading,setIsLoading]=useState(false);
+  const messagesEndRef=useRef(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (message.trim()) {
-      setMessages([...messages, { text: message, sender: 'user' }]);
-      setMessage('');
+  const chatSessionRef=useRef(null);
+
+  useEffect(()=>{
+    if(!chatSessionRef.current){
+      chatSessionRef.current=createChatSession();
     }
+  },[]);
+
+  const scrollToBottom=()=>{
+    messagesEndRef.current?.scrollIntoView({behavior:'smooth'});
+  };
+
+  useEffect(()=>{
+    scrollToBottom();
+
+  },[messages,isOpen]);
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(!inputValue.trim() || isLoading) return;
+
+    const userText=inputValue.trim();
+    setInputValue('');
+
+    // Add user message to state
+    const userMessage={
+      id:Date.now().toString(),
+      text:userText,
+      sender:'user',
+      timestamp:new Date(),
+    };
+    setMessages((prev)=>[...prev,userMessage]);
+    setIsLoading(true);
+
+    try{
+      if(!chatSessionRef.current){
+        chatSessionRef.current=createChatSession();
+      }
+      const responseText=await sendMessageToGemini(chatSessionRef.current,userText);
+     
+      const botMessage={
+        id:(Date.now()+1).toString(),
+        text:responseText,
+        sender:'bot',
+        timestamp:new Date(),
+
+      };
+      setMessages((prev)=>[...prev,botMessage]);
+    } catch(error){
+      const errorMessage={
+        id:(Date.now()+1).toString(),
+        text:"Sorry, I encountered an error. Please try again.",
+        sender:'bot',
+        timestamp:new Date(),
+      };
+      setMessages((prev)=>[...prev,errorMessage]);
+    } finally{
+      setIsLoading(false);
+    }
+    
   };
 
   return (
@@ -71,21 +132,26 @@ const Chatbot = ({ isOpen, setIsOpen }) => {
 
             {/* Messages Area */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
-              <div className="text-center mt-8 sm:mt-12 space-y-4">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-violet-500/20 to-violet-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-violet-500/20">
+              <div className="text-center mt-8 sm:mt-12 space-y-4 pb-4">
+               
+                <motion.div initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{type:"spring",stiffness:260,damping:20}}className="w-16 h-16 mx-auto bg-gradient-to-br from-violet-500/20 to-violet-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-violet-500/20">
                   <Sparkles className="w-6 h-6 text-violet-400" />
-                </div>
-                <div className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-2xl border border-gray-700/50">
+                </motion.div>
+                <motion.div 
+                initial={{opacity:0,y:10}}
+                animate={{opacity:1,y:0}}
+                transition={{delay:0.1}}
+                className="bg-gray-800/50 backdrop-blur-sm p-4 rounded-2xl border border-gray-700/50">
                   <p className="text-gray-300 font-medium mb-1">
                     👋 Good evening! I'm Pavanesh Guggilapu, a Frontend Developer. How can I help you today?
                   </p>
                   <p className="text-gray-400 text-sm">
                     Ask me about my projects, skills, or anything tech-related!
                   </p>
-                </div>
+                </motion.div>
               </div>
-              {messages.map((msg, index) => (
-                <div key={index} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+              {messages.map((msg) => (
+                <motion.div key={msg.id} initial={{opacity:0,y:10,scale:0.95}} animate={{opacity:1,y:0,scale:1}} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div
                     className={`max-w-[80%] p-3 rounded-2xl ${
                       msg.sender === 'user'
@@ -95,8 +161,18 @@ const Chatbot = ({ isOpen, setIsOpen }) => {
                   >
                     {msg.text}
                   </div>
-                </div>
+                </motion.div>
               ))}
+
+              {isLoading && (
+                <motion.div initial={{opacity:0,y:5}} animate={{opacity:1,y:0}} className="flex justify-start">
+                  <div className="bg-gray-800/50 p-3 rounded-2xl rounded-tl-sm border border-gray-700/30 flex items-center gap-2">
+                  <Loader2 className="w-4 h-4 text-violet-400 animate-spin"/>
+                  <span className="text-xs text-gray-400">Thinking...</span>
+                  </div>
+                </motion.div>
+              )}
+              <div ref={messagesEndRef}/>
             </div>
 
             {/* Input Area */}
@@ -108,16 +184,16 @@ const Chatbot = ({ isOpen, setIsOpen }) => {
                     maxLength={500}
                     className="w-full p-3 pr-12 rounded-2xl bg-gray-700/50 backdrop-blur-sm border border-gray-600/50 text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition-all duration-200"
                     type="text"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
                   />
                   <div className="absolute right-3 bottom-3 text-xs text-gray-500">
-                    {message.length}/500
+                    {inputValue.length}/500
                   </div>
                 </div>
                 <button
                   type="submit"
-                  disabled={!message.trim()}
+                  disabled={!inputValue.trim() || isLoading}
                   aria-label="Send message"
                   className="p-3 bg-gradient-to-br from-violet-600 to-violet-600 text-white rounded-2xl hover:from-violet-500 hover:to-violet-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg hover:shadow-violet-500/25 focus:outline-none focus:ring-2 focus:ring-violet-500/50"
                 >
