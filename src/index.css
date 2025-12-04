@@ -50,6 +50,8 @@ html.lenis body {
 
 @layer base {
     :root {
+        --primary-purple: 275, 96%, 52%;
+        --color-primary: hsl(var(--primary-purple));
         --color-blue-300: oklch(.809 .105 251.813);
         --color-blue-400: oklch(.707 .165 254.624);
         --color-blue-500: oklch(.623 .214 259.815);

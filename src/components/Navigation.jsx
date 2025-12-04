@@ -42,14 +42,17 @@ const Navigation = () => {
               {active && (
                 <motion.div
                   layoutId="activeIndicator"
-                  className="bg-primary/5 absolute inset-0 -z-10 w-full rounded-full"
+                  className=" absolute inset-0 -z-10 w-full rounded-full"
+                  style={{
+                backgroundColor: 'color-mix(in oklab, hsl(var(--primary-purple)) 5%, transparent)'
+             }}
                   initial={false}
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 >
-                  <div className="bg-primary absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full">
-                    <div className="bg-primary/10 absolute -top-2 -left-2 h-6 w-12 rounded-full blur-sm" />
-                    <div className="bg-primary/10 absolute -top-1 h-6 w-8 rounded-full blur-sm" />
-                    <div className="bg-primary/10 absolute top-0 left-2 h-4 w-4 rounded-full blur-sm" />
+                  <div className=" absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"  style={{ backgroundColor: 'hsl(var(--primary-purple))' }}>
+                    <div className=" absolute -top-2 -left-2 h-6 w-12 rounded-full blur-sm"  style={{ backgroundColor: 'color-mix(in oklab, hsl(var(--primary-purple)) 10%, transparent)' }} />
+                    <div className=" absolute -top-1 h-6 w-8 rounded-full blur-sm"style={{ backgroundColor: 'color-mix(in oklab, hsl(var(--primary-purple)) 10%, transparent)' }}/>
+                    <div className=" absolute top-0 left-2 h-4 w-4 rounded-full blur-sm" style={{ backgroundColor: 'color-mix(in oklab, hsl(var(--primary-purple)) 10%, transparent)' }} />
                   </div>
                 </motion.div>
               )}
