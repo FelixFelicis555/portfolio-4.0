@@ -31,38 +31,38 @@ const ProjectsSection = ({projects,showSeeMore=true}) => {
     };
     return iconMap[techName]
   };
-  const colorMap={
-     blue: {
-      fill: '#2563eb',
-      text: '#93c5fd',
-      bg: 'rgba(37, 99, 235, 0.2)',
-      shadow: 'rgb(37, 99, 235)'
-    },
-    pink: {
-      fill: '#db2777',
-      text: '#f9a8d4',
-      bg: 'rgba(219, 39, 119, 0.2)',
-      shadow: 'rgb(219, 39, 119)'
-    },
-    emerald: {
-      fill: '#059669',
-      text: '#6ee7b7',
-      bg: 'rgba(5, 150, 105, 0.2)',
-      shadow: 'rgb(5, 150, 105)'
-    },
-    purple: {
-      fill: '#7e22ce',
-      text: '#e9d5ff',
-      bg: 'rgba(126, 34, 206, 0.2)',
-      shadow: 'rgb(126, 34, 206)'
-    },
-    cyan: {
-      fill: '#0891b2',
-      text: '#67e8f9',
-      bg: 'rgba(8, 145, 178, 0.2)',
-      shadow: 'rgb(32, 58, 67)'
-    }
-  };
+  const colorMap = {
+  blue: {
+    fill: 'oklch(0.623 0.214 259.815)',      // --color-blue-500
+    text: 'oklch(0.809 0.105 251.813)',      // --color-blue-300 (lighter for text)
+    bg: 'oklch(0.623 0.214 259.815 / 0.2)',  // Blue with 20% opacity
+    shadow: 'oklch(0.623 0.214 259.815)'
+  },
+  pink: {
+    fill: 'oklch(0.645 0.246 16.439)',       // --color-rose-500
+    text: 'oklch(0.823 0.12 346.018)',       // --color-pink-300 (lighter for text)
+    bg: 'oklch(0.645 0.246 16.439 / 0.2)',
+    shadow: 'oklch(0.645 0.246 16.439)'
+  },
+  emerald: {
+    fill: 'oklch(0.723 0.219 149.579)',      // --color-green-500
+    text: 'oklch(0.845 0.143 164.978)',      // --color-emerald-300 (lighter for text)
+    bg: 'oklch(0.723 0.219 149.579 / 0.2)',
+    shadow: 'oklch(0.723 0.219 149.579)'
+  },
+  purple: {
+    fill: 'oklch(0.627 0.265 303.9)',        // --color-purple-500
+    text: 'oklch(0.827 0.119 306.383)',      // --color-purple-300 (lighter for text)
+    bg: 'oklch(0.627 0.265 303.9 / 0.2)',
+    shadow: 'oklch(0.627 0.265 303.9)'
+  },
+  cyan: {
+    fill: 'oklch(0.715 0.143 215.221)',      // --color-cyan-500
+    text: 'oklch(0.865 0.127 207.078)',      // --color-cyan-300 (lighter for text)
+    bg: 'oklch(0.715 0.143 215.221 / 0.2)',
+    shadow: 'oklch(0.715 0.143 215.221)'
+  }
+};
   const getColorStyles=(techColor)=>{
     return colorMap[techColor] ;
   }
@@ -93,8 +93,9 @@ const ProjectsSection = ({projects,showSeeMore=true}) => {
         {/* Project Cards */}
         <div className="mx-auto flex max-w-2xl flex-col gap-y-6 md:gap-y-24 lg:max-w-[65%]">
           {projects.map((project, index) => {
-
+            
             const colors=getColorStyles(project.techColor);
+            
             return (
             <div key={project.id} className="w-full">
               <div className="project-card flex w-full flex-row">
@@ -111,13 +112,13 @@ const ProjectsSection = ({projects,showSeeMore=true}) => {
                     
                     <div className="group relative flex size-full flex-col items-center justify-between overflow-hidden rounded-xl lg:rounded-2xl bg-linear-to-b from-black/40 to-transparent transition-all duration-300">
                       <div
-                        className="absolute inset-0 -z-1"
+                        className="absolute inset-0 -z-10"
                         style={{ background: project.gradient }}
                       />
                       <div className="absolute inset-x-0 top-px z-10 h-[0.8px] opacity-70" style={{ background: 'linear-gradient(90deg, rgba(0, 0, 0, 0) 20%, rgb(255, 255, 255) 50%, rgba(0, 0, 0, 0) 80%)' }} />
                       
-                      <div className={`w-full flex flex-row items-center justify-between px-6  lg:px-12 py-8 text-{colors.text}} `}  >
-                        <h3 className="max-w-[85%]  text-xl lg:text-2xl text-{colors.text}"> {project.shortDesc}
+                      <div className="w-full flex flex-row items-center justify-between px-6  lg:px-12 py-8  "  style={{ color: colors.text }}   >
+                        <h3 className="max-w-[85%]  text-xl lg:text-2xl  " > {project.shortDesc}
 </h3>
                          {/* Framer Motion Animated Arrow */}
                           <motion.div 
